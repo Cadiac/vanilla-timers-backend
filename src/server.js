@@ -7,7 +7,6 @@ const server = new Hapi.Server();
 
 // allow port configuration through argv
 server.connection({
-  host: config.host,
   port: config.port,
   routes: {
     cors: {
