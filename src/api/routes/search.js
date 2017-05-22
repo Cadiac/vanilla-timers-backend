@@ -10,6 +10,7 @@ module.exports.nameSearch = {
       name: Joi.string().required(),
     },
   },
+  tags: ['api'],
   handler: (request, reply) =>
     searchService.searchByName(request.query.name)
       .then((result) => {

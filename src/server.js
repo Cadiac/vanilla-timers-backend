@@ -27,12 +27,12 @@ server.register([
     register: require('blipp'),
     options: {},
   },
-  // needed by lout
+  // needed by swagger
   require('vision'),
   require('inert'),
   {
     // api documentation
-    register: require('lout'),
+    register: require('hapi-swagger'),
     options: {},
   }], {}, (err) => {
     if (err) {
