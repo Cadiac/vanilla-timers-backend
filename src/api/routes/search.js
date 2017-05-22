@@ -8,11 +8,12 @@ module.exports.nameSearch = {
   validate: {
     query: {
       name: Joi.string().required(),
+      page: Joi.number().integer().min(0),
     },
   },
   tags: ['api'],
   handler: (request, reply) =>
-    searchService.searchByName(request.query.name)
+    searchService.searchByName(request.query.name, request.query.page)
       .then((result) => {
         if (result) {
           return reply(result);
